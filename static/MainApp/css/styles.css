@@ -1,0 +1,29 @@
+body{
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+#hero{
+    background: #4ce4a2;
+    height: 70px;
+    padding: 10px;
+    padding-left: 10px;
+    text-align: right;
+}
+
+.main{
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 20vh;
+}
+
+
+
+.inner-box{
+    margin: 5vh;
+    padding: 0.5rem;
+    height: 170px;
+    background: #4ce4a2;
+    width: 70%;
+}
