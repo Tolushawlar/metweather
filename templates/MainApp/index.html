@@ -17,24 +17,27 @@
         <div class="col-4"></div>
         <div class="col-4">
             <div class="container main">
-                <form action="#" class="form-inline">
-                    <input class="form-control" type="text">
-                    <label><button class="btn btn-success">Add City</button></label>
+                <form method="POST" class="form-inline">
+                    {% csrf_token %}
+                    {{ form.name }}
+                    <button type="submit" class="btn btn-success">Add City</button>
                 </form>
-                <div class="inner-box">
-                    <div class="row">
-                        <div class="col-3">
-                            <div class="image">
-                                image
+                {% for item in city_weather %}
+                    <div class="inner-box">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="image">
+                                    <img src="http://openweathermap.org/img/w/{{ item.icon }}.png" alt="image">
+                                </div>
+                            </div>
+                            <div class="col-9">
+                                <h2 id="city">{{ item.city }}</h2>
+                                <h3 id="temp">{{ item.temperature }} *F</h3>
+                                <h6 id="condition">{{ item.description }}</h6>
                             </div>
                         </div>
-                        <div class="col-9">
-                            <h2 id="city">Las Vegas</h2>
-                            <h3 id="temp">29*</h3>
-                            <h6 id="condition"> cloudy with silight rain</h4>
-                        </div>
                     </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
         <div class="col-4"></div>
