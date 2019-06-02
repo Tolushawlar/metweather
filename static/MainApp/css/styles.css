@@ -1,32 +1,77 @@
-#hero{
-    background: #4ce4a2;
-    height: 70px;
-    padding: 10px;
-    padding-left: 10px;
-    text-align: right;
+body{
+    background: #eee;
+    width: 100%;
+    overflow-x: hidden !important;
 }
 
-.main{
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    margin-top: 20vh;
+.head{
+    font-weight: bolder;
+    text-decoration-color: #ccc;
+}
+
+.hero{
+    background-color : #5a5a5a !important;
+    padding: 1rem;
+}
+
+span{
+    font-size:15px;
+}
+
+a{
+  text-decoration:none; 
+  color: #0062cc;
+  
+}
+
+.box{
+    padding:60px 0px;
+}
+
+.box-part{
+    background:rgb(211, 206, 206);
+    border-radius:0;
+    padding:60px 10px;
+    margin:30px 0px;
+}
+.text{
+    margin:20px 0px;
+}
+
+.fa{
+     color:#4183D7;
 }
 
 
-
-.inner-box{
-    margin: 5vh;
-    padding: 0.5rem;
-    height: 170px;
-    background: #4ce4a2;
-    width: 70%;
+/* for the search form */
+#custom-search-input{
+    padding: 3px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
 }
 
+#custom-search-input input{
+    border: 0;
+    box-shadow: none;
+}
 
-/* for the moblie responsiveness */
-@media only screen and (max-width: 600px) {
-    body {
-      background-color: lightblue;
-    }
-  }
+#custom-search-input button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input button:hover{
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input .glyphicon-search{
+    font-size: 23px;
+}

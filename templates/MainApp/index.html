@@ -7,41 +7,105 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Weather App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="{% static 'MainApp/css/styles.css' %}" rel="stylesheet">
 </head>
 <body>
-    <header id="hero">
-        <h2>Weather Information Live</h2>
-    </header>
-    <div class="row">
-        <div class="col-4"></div>
-        <div class="col-4">
-            <div class="container main">
-                <form method="POST" class="form-inline">
-                    {% csrf_token %}
-                    {{ form.name }}
-                    <button type="submit" class="btn btn-success">Add City</button>
-                </form>
-                {% for item in city_weather %}
-                    <div class="inner-box">
-                        <div class="row">
-                            <div class="col-3">
-                                <div class="image">
-                                    <img src="http://openweathermap.org/img/w/{{ item.icon }}.png" alt="image">
+    <nav class="navbar navbar-light bg-light hero">
+        <a class="navbar-brand pl-5 bold head" href="#">Weather Information App</a>
+    </nav>
+    
+    <!--
+    <div class="container">
+            <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">     
+                        </div>	 
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <form method="POST">
+                        {% csrf_token %}
+                            <div id="custom-search-input">
+                                    <div class="input-group col-md-12">
+                                        {{ form.name }}
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-info btn-lg" type="submit">
+                                                <i class="fa fa-search fa-1x"></i>
+                                            </button>
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-9">
-                                <h2 id="city">{{ item.city }}</h2>
-                                <h3 id="temp">{{ item.temperature }} *F</h3>
-                                <h6 id="condition">{{ item.description }}</h6>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
+                    </form>
+                </div>
+
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">     
+                    </div>	 
+
             </div>
         </div>
-        <div class="col-4"></div>
-    </div>
+    -->
+
+    <div class="box">
+            <div class="container">
+                 <div class="row">
+                     
+                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">     
+                                <div class="box-part  shadow  rounded z-depth-3 text-center">
+                                        <i class="fa " aria-hidden="true"><img src="http://api.openweathermap.org/img/w/{{ city_weather.icon }}.png"></i>
+                                    
+                                        <div class="title">
+                                            <h4>{{ city_weather.city }}</h4>
+                                        </div>
+                                        <div class="title temp">
+                                            <h4>{{ city_weather.temperature }} °F</h4>
+                                        </div>
+                                        <div class="text">
+                                        <h3>{{ city_weather.description }}.</h3>
+                                        </div>
+                                        
+                                    </div>
+                        </div>	 
+                        
+                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+                            <div class="box-part  shadow  rounded z-depth-3 text-center">
+                                    <i class="fa " aria-hidden="true"><img src="http://api.openweathermap.org/img/w/{{ city_weather2.icon }}.png"></i>
+                                
+                                    <div class="title">
+                                        <h4>{{ city_weather2.city }}</h4>
+                                    </div>
+                                    <div class="title temp">
+                                        <h4>{{ city_weather2.temperature }} °F</h4>
+                                    </div>
+                                    <div class="text">
+                                    <h3>{{ city_weather2.description }}.</h3>
+                                    </div>
+                                    
+                            </div>
+
+                        </div>	 
+                        
+                         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <div class="box-part  shadow  rounded z-depth-3 text-center">
+                                        <i class="fa " aria-hidden="true"><img src="http://api.openweathermap.org/img/w/{{ city_weather2.icon }}.png"></i>
+                                    
+                                        <div class="title">
+                                            <h4>{{ city_weather3.city }}</h4>
+                                        </div>
+                                        <div class="title temp">
+                                            <h4>{{ city_weather3.temperature }} °F</h4>
+                                        </div>
+                                        <div class="text">
+                                        <h3>{{ city_weather3.description }}.</h3>
+                                        </div>
+                                        
+                                </div>
+                        </div>	 
+                       
+                </div>	
+                
+                
+            </div>
+        </div>
     <script src="{% static 'MainApp/js/app.js' %}"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
